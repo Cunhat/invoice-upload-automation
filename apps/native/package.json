@@ -11,19 +11,30 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@react-navigation/native": "^6.1.14",
+    "@react-navigation/native-stack": "^6.9.22",
+    "@repo/ui": "*",
+    "class-variance-authority": "^0.7.0",
     "expo": "^49.0.21",
+    "expo-image-picker": "^14.7.1",
+    "expo-media-library": "^15.9.1",
     "expo-status-bar": "~1.7.0",
+    "lucide-react-native": "^0.343.0",
+    "nativewind": "^2.0.11",
+    "postcss": "^8.4.23",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-native": "0.73.1",
     "react-native-web": "^0.19.10",
-    "@repo/ui": "*"
+    "react-navigation": "^5.0.0",
+    "expo-camera": "~13.4.4"
   },
   "devDependencies": {
     "@babel/core": "^7.23.7",
     "@expo/webpack-config": "^19.0.0",
     "@types/react": "^18.2.46",
     "@types/react-native": "^0.73.0",
+    "tailwindcss": "^3.3.2",
     "typescript": "^5.3.3"
   }
 }

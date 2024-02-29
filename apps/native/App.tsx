@@ -1,33 +1,30 @@
-import { StyleSheet, Text, View } from "react-native";
-import { StatusBar } from "expo-status-bar";
-import { Button } from "@repo/ui";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { Home } from "./src/screens/home";
+import { Upload } from "./src/screens/upload";
+import { UploadFromPhoto } from "./src/screens/uploadFromPhoto";
 
-export default function Native() {
+const Stack = createNativeStackNavigator();
+
+export type RootStackParamList = {
+  Home: {};
+  Upload: undefined;
+  UploadFromPhoto: {};
+  UploadFromGallery: {};
+};
+
+export default function App() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.header}>Native</Text>
-      <Button
-        onClick={() => {
-          console.log("Pressed!");
-          alert("Pressed!");
+    <NavigationContainer>
+      <Stack.Navigator
+        screenOptions={{
+          headerShown: false,
         }}
-        text="Boop"
-      />
-      <StatusBar style="auto" />
-    </View>
+      >
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Upload" component={Upload} />
+        <Stack.Screen name="UploadFromPhoto" component={UploadFromPhoto} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  header: {
-    fontWeight: "bold",
-    marginBottom: 20,
-    fontSize: 36,
-  },
-});
